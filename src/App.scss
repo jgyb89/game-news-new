@@ -1,0 +1,17 @@
+@use 'styles/variables';
+@use 'styles/globals';
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 80px; // Ensure footer is visible
+}
+
+html,
+body,
+#root,
+.App,
+main {
+  min-height: 100%;
+  height: 100%;
+}
