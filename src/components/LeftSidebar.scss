@@ -1,0 +1,45 @@
+@use "../styles/variables";
+
+.custom-sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px; // Default full size
+    background-color: variables.$gradient-bg; // Adjust to match your theme
+    transition: width 0.3s;
+
+    @media (max-width: 1200px) {
+        width: 64px; // Condensed width for smaller desktops/tablets
+        .sidenav-text {
+            display: none; // Hide text
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: none; // Hide the sidebar on mobile devices
+    }
+    
+    .sidenav-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;  
+        }
+    }
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-text {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 1rem;
+}
