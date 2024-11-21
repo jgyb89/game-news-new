@@ -1,46 +1,87 @@
 @use "../styles/variables";
 @use "../styles/globals";
 
+.sidenav-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-text {
+    color: #fff;
+    display: inline;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.logo img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    transition: all 0.2s ease;
+}
+
+/* Sidebar Styles */
 .custom-sidenav {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 250px; // Default full size
-    background-color: variables.$gradient-bg; // Adjust to match your theme
-    transition: width 0.3s;
+    width: 250px;
+    background-color: variables.$gradient-bg;
+    transition: width 0.2s ease;
+    
 
     @media (max-width: 1200px) {
-        width: 64px; // Condensed width for smaller desktops/tablets
-        .sidenav-text {
-            display: none; // Hide text
+        width: 64px;
+
+        .logo img {
+            content: url('../gamenews-logo-condensed.svg');
+            height: 32px;
+            margin-top: 10px;
+        }
+
+        .nav-text {
+            display: none;
         }
     }
 
     @media (max-width: 768px) {
-        display: none; // Hide the sidebar on mobile devices
+        display: none;
     }
-    
-    .sidenav-nav {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        
-        .nav-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;  
-        }
+}
+
+/* Responsive Logo Styles */
+@media (min-width: 1200px) {
+    .logo img {
+        height: 60px;
     }
-    
-    .nav-icon {
-        font-size: 1.5rem;
-        color: #fff;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .logo img {
+        padding: 0.25rem;
+        width: 40px;
+        height: auto;
     }
-    
-    .nav-text {
-        color: #fff;
-        margin-left: 15px;
-        font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        display: none;
     }
 }

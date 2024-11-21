@@ -1,7 +1,12 @@
-const Home = () => {
+import './Home.scss'
+
+export const Home = () => {
   return (
-    <div>Home</div>
+    <aside>
+        <div></div>
+    </aside>
   )
 }
+
 
 export default Home;

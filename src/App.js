@@ -7,13 +7,12 @@ import Notifications from './pages/Notifications';
 import Messages from './pages/Messages';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
-import { RightSidebar } from './components/RightSidebar';
 
 function App() {
   return (
     <Router>
       <LeftSidebar />
-      <RightSidebar />
+      
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/create' element={<Create />} />
