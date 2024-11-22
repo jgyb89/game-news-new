@@ -8,8 +8,8 @@ import Create from '../assets/create.svg';
 import profileCat from '../assets/profile-cat.webp';
 
 const LeftSidebar = () => {
-    const navigate = useNavigate(); // For navigation
-    const location = useLocation(); // For highlighting the active item
+    const navigate = useNavigate();
+    const location = useLocation();
     const [expanded, setExpanded] = useState(true);
 
     useEffect(() => {
@@ -27,16 +27,23 @@ const LeftSidebar = () => {
         setExpanded(isExpanded);
     };
 
+    const navItems = [
+        { eventKey: "/search", icon: "fa-solid fa-magnifying-glass", text: "Search" },
+        { eventKey: "/news", icon: "fa-regular fa-newspaper", text: "News" },
+        { eventKey: "/notifications", icon: "fa-regular fa-heart", text: "Notifications" },
+        { eventKey: "/discover", icon: "fa-regular fa-compass", text: "Discover" },
+        { eventKey: "/groups", icon: "fa-solid fa-user-group", text: "Groups" },
+        { eventKey: "/create", icon: null, text: "Create", image: Create },
+        { eventKey: "/profile", icon: null, text: "Profile", image: profileCat },
+    ];
+
     return (
         <SideNav
             expanded={expanded}
             onToggle={handleToggle}
             className="custom-sidenav"
             onSelect={(selected) => {
-                const path = selected === "home" ? "/" : selected; // Adjust for home route
-                if (location.pathname !== path) {
-                    navigate(path); // Navigate only if the path is different
-                }
+                if (location.pathname !== selected) navigate(selected);
             }}
         >
             <div className="custom-sidenav-container">
@@ -50,82 +57,30 @@ const LeftSidebar = () => {
                         <img src={GamenewsLogo} alt="Game News Logo" />
                     </div>
 
-                    <NavItem eventKey="search" onClick={() => navigate("/search")} className="nav-link">
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Search</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="news" className="nav-link" onClick={() => navigate("/news")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <i className="fa-regular fa-newspaper"></i>
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">News</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="notifications" className="nav-link" onClick={() => navigate("/notifications")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <i className="fa-regular fa-heart"></i>
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Notifications</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="discover" className="nav-link" onClick={() => navigate("/discover")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <i className="fa-regular fa-compass"></i>
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Discover</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="groups" className="nav-link" onClick={() => navigate("/groups")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <i className="fa-solid fa-user-group"></i>
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Groups</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="create" className="nav-link" onClick={() => navigate("/create")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <img src={Create} alt="Create" />
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Create</p>
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem eventKey="profile" className="nav-link" onClick={() => navigate("/profile")}>
-                        <NavIcon>
-                            <div className="nav-icon">
-                                <img src={profileCat} className="profile" alt="Profile" />
-                            </div>
-                        </NavIcon>
-                        <NavText>
-                            <p className="nav-text">Profile</p>
-                        </NavText>
-                    </NavItem>
+                    {/* Render Navigation Items */}
+                    {navItems.map((item) => (
+                        <NavItem
+                            key={item.eventKey}
+                            eventKey={item.eventKey}
+                            onClick={() => navigate(item.eventKey)}
+                            className="nav-link"
+                        >
+                            <NavIcon>
+                                {item.icon ? (
+                                    <div className="nav-icon">
+                                        <i className={item.icon}></i>
+                                    </div>
+                                ) : (
+                                    <div className="nav-icon">
+                                        <img src={item.image} alt={item.text} />
+                                    </div>
+                                )}
+                            </NavIcon>
+                            <NavText>
+                                <p className="nav-text">{item.text}</p>
+                            </NavText>
+                        </NavItem>
+                    ))}
                 </SideNav.Nav>
             </div>
         </SideNav>

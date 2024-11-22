@@ -10,7 +10,7 @@ aside {
     bottom: 0;
     padding: 10px;
     min-width: 250px;
-    background-color: variables.$gradient-bg; // Adjust to match your theme
+    background: variables.$gradient-bg;
     transition: width 0.3s;
 
     @media (max-width: 1200px) {
