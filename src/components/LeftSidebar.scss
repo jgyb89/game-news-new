@@ -13,27 +13,65 @@
     }
 }
 
-.nav-icon {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.nav-text {
-    color: #fff;
-    display: inline;
-    margin-left: 15px;
-    font-size: 1rem;
+.clickable {
+    cursor: pointer;
 }
 
 .logo img {
     display: flex;
-    justify-content: center;
-    margin: auto;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin-bottom: 20px;
     width: 200px;
     height: auto;
     max-width: 100%;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
+
+.custom-sidenav-container {
+    position: absolute;
+    right: 20px;
+
+    .nav-link {
+        display: block;
+        width: 200px;
+        align-items: center;
+        padding: 10px;
+
+        &:hover {
+            background-color: variables.$primary-color;
+            border-radius: 10px;
+        }
+    }
+
+    .nav-icon {
+        font-size: 1.65rem;
+        color: #fff;
+        opacity: 1;
+
+        img {
+            width: 1.7rem;
+            margin-top: 13px;
+        }
+
+        .profile {
+            width: 2.2rem;
+            margin-top: 8px;
+        }
+
+    }
+
+    
+
+    .nav-text {
+        color: #fff;
+        display: inline;
+        margin-left: 5px;
+        font-size: 1rem;
+    }
+
+}
+
 
 /* Sidebar Styles */
 .custom-sidenav {
@@ -41,23 +79,61 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 250px;
-    background-color: variables.$gradient-bg;
-    transition: width 0.2s ease;
-    
+    width: 200px;
+    background: variables.$gradient-bg;
+    transition: width 0.3s ease;
 
     @media (max-width: 1200px) {
         width: 64px;
 
         .logo img {
-            content: url('../gamenews-logo-condensed.svg');
+            content: url('../assets/gamenews-logo-condensed.svg');
+            display: flex;
+            justify-content: center;
+            margin: auto;
             height: 32px;
             margin-top: 10px;
+            margin-bottom: 20px;
         }
+
+        .custom-sidenav-container {
+            position: relative; // Prevent absolute positioning
+            right: 0; // Reset the right offset
+            display: flex;
+            flex-direction: column; // Ensure items stack vertically
+            align-items: flex-start; // Align items to the left
+
+        }
+
+        .nav-link {
+                display: block;
+                width: 100%;
+                align-items: center;
+                text-align: left;
+                justify-self: flex-start;
+                padding: 10px;
+
+                &:hover {
+                    background-color: variables.$primary-color;
+                    border-radius: 10px;
+                }
+
+                .nav-icon {
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    margin: auto;
+                    height: 32px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
+            }
 
         .nav-text {
             display: none;
         }
+
     }
 
     @media (max-width: 768px) {
@@ -70,6 +146,16 @@
     .logo img {
         height: 60px;
     }
+
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        width: 64px;
+
+    }
+
 }
 
 @media (max-width: 1200px) and (min-width: 768px) {
@@ -78,6 +164,8 @@
         width: 40px;
         height: auto;
     }
+
+
 }
 
 @media (max-width: 768px) {
