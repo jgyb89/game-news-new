@@ -17,3 +17,13 @@ aside {
        display: none;
     }
 }
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    width: 800px;
+    min-width: 800px;
+    background-color: #fff;
+}

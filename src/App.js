@@ -1,5 +1,3 @@
-// App.js
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LeftSidebar from './components/LeftSidebar';
 import Home from './pages/Home';

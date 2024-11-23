@@ -7,3 +7,17 @@ body {
 i {
     color: #fff;
 }
+
+h1{
+    font-size: 72px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-width: 800px;
+    background-color: #fff;
+    width: 500px;
+}
