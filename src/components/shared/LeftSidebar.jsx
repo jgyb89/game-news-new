@@ -3,9 +3,9 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './LeftSidebar.scss'; // Import custom styles
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import GamenewsLogo from '../assets/gamenews-logo.svg';
-import Create from '../assets/create.svg';
-import profileCat from '../assets/profile-cat.webp';
+import GamenewsLogo from '../../assets/gamenews-logo.svg';
+import Create from '../../assets/create.svg';
+import profileCat from '../../assets/profile-cat.webp';
 
 const LeftSidebar = () => {
     const navigate = useNavigate();
@@ -28,6 +28,7 @@ const LeftSidebar = () => {
     };
 
     const navItems = [
+        { eventKey: "/sign-in", icon: "fa-solid fa-magnifying-glass", text: "Sign-in" },
         { eventKey: "/search", icon: "fa-solid fa-magnifying-glass", text: "Search" },
         { eventKey: "/news", icon: "fa-regular fa-newspaper", text: "News" },
         { eventKey: "/notifications", icon: "fa-regular fa-heart", text: "Notifications" },

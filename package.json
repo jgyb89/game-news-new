@@ -7,6 +7,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@trendmicro/react-sidenav": "^0.5.0",
+    "appwrite": "^16.0.2",
+    "dotenv": "^16.4.5",
     "nth-check": "^2.0.1",
     "postcss": "^8.4.31",
     "react": "^18.3.1",

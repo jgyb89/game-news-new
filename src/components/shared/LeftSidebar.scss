@@ -1,5 +1,5 @@
-@use "../styles/variables";
-@use "../styles/globals";
+@use "../../styles/variables";
+@use "../../styles/globals";
 
 .sidenav-nav {
     display: flex;
@@ -88,13 +88,17 @@
         width: 64px;
 
         .logo img {
-            content: url('../assets/gamenews-logo-condensed.svg');
+            content: url('../../assets/gamenews-logo-condensed.svg');
             display: flex;
             justify-content: center;
             margin: auto;
             height: 32px;
             margin-top: 10px;
             margin-bottom: 20px;
+        }
+
+        .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+            width: 100%;
         }
 
         .custom-sidenav-container {
